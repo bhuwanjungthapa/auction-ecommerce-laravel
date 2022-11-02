@@ -526,6 +526,7 @@
 <script src="{{asset('dist/libs/jsvectormap/dist/maps/world-merc.js')}}" defer></script>
 <!-- Tabler Core -->
 <script src="{{asset('dist/js/tabler.min.js')}}" defer></script>
+
 <script src="{{asset('dist/js/demo.min.js')}}" defer></script>
 <script>
     // @formatter:off
@@ -1101,5 +1102,7 @@
     });
     // @formatter:on
 </script>
+
+@yield('js')
 </body>
 </html>

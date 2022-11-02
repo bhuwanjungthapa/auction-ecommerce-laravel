@@ -1,8 +1,8 @@
 <div class="col-md-12">
 
     <div class="form-group">
-        {!!Form::label('vehicle_id','Select Vehicle')!!}
-        {!!Form::select ('vehicle_id',$data['vehicle'],null,['class'=> 'form-control'])!!}
+        {!!Form::label('vehicles_id','Select Vehicle')!!}
+        {!!Form::select ('vehicles_id',$data['vehicles'],null,['class'=> 'form-control'])!!}
         @error('vehicle_id')
         <span class="text-danger">{{$message}}</span>
         @enderror
@@ -40,13 +40,32 @@
         @enderror
     </div>
 
-    div class="form-group">
-    {!!Form::label('end_time','Start date')!!}
-    {!!Form::date ('end_time',\Carbon\Carbon::now())!!}
-    @error('end_time')
+
+    <div class="form-group">
+        {!!Form::label('start_time','Start time')!!}
+        {!! Form::time('field_name', \Carbon\Carbon::now()->format('h:i'), ['class'=>'form-control']) !!}
+        @error('start_time')
+        <span class="text-danger">{{$message}}</span>
+        @enderror
+    </div>
+
+
+    <div class="form-group">
+    {!!Form::label('end_date','End date')!!}
+    {!!Form::date ('end_date',\Carbon\Carbon::now())!!}
+    @error('end_date')
     <span class="text-danger">{{$message}}</span>
     @enderror
 </div>
+
+
+    <div class="form-group">
+        {!!Form::label('end_time','end time')!!}
+        {!! Form::time('end_time', \Carbon\Carbon::now()->format('h:i'), ['class'=>'form-control']) !!}
+        @error('end_time')
+        <span class="text-danger">{{$message}}</span>
+        @enderror
+    </div>
 
 
 <div class="form-group">
@@ -63,3 +82,14 @@
         {!!Form::submit($button .''.$module,['class'=>'btn btn-success'])!!}
         {!!Form::reset('Clear'.''.$module,['class'=>'btn btn-danger'])!!}
     </div>
+
+@section('js')
+    <script>
+        $('#title').keyup(function() {
+            var Text = $(this).val();
+            Text = Text.toLowerCase();
+            Text = Text.replace(/[^a-zA-Z0-9]+/g,'-');
+            $('#slug').val(Text);
+        });
+    </script>
+@endsection

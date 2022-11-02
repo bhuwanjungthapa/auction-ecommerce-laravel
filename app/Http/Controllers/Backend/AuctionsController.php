@@ -1,9 +1,8 @@
 <?php
-
 namespace App\Http\Controllers\Backend;
-
 use App\Http\Controllers\Controller;
 use App\Models\Backend\Auctions;
+use App\Models\Backend\Vehicle;
 use Illuminate\Http\Request;
 
 class AuctionsController extends BackendBaseController
@@ -22,15 +21,15 @@ class AuctionsController extends BackendBaseController
     }
     public function create()
     {
-        $data['batches']= Vehicle::pluck('title','id');
-        return view($this->__loadDataToView($this->base_view .'create'));
+        $data['vehicles']= Vehicle::pluck('title','id');
+        return view($this->__loadDataToView($this->base_view .'create'),compact('data'));
     }
     public function store(Request $request)
     {
         try{
-            $request->validate(array(
-                'year'=>'required'
-            ));
+//            $request->validate(array(
+//                'year'=>'required'
+//            ));
             $request->request->add(['created_by'=>auth()->user()->id]);
             $record=$this->model::create($request->all());
             if($record)
