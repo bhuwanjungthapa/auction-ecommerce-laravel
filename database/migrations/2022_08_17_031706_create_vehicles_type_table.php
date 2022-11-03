@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('title', 100);
             $table->string('slug')->unique();
             $table->Integer('rank');
-            $table->string('image')->nullable();
+
             $table->string('meta_title',100)->nullable();
             $table->string('meta_keyword',100)->nullable();
             $table->string('meta_description',100)->nullable();

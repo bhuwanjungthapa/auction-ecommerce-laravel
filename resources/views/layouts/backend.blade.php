@@ -183,25 +183,78 @@
                             </a>
                         </li>
 
+{{--                        <li class="nav-item dropdown">--}}
+{{--                            <a class="nav-link dropdown-toggle" href="{{route('backend.auction.index')}}" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false" >--}}
+{{--                                <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/package -->--}}
+{{--                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="9 11 12 14 20 6" /><path d="M20 12v6a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h9" /></svg>--}}
+{{--                                </span>--}}
+{{--                                <span class="nav-link-title">--}}
+{{--                                  Auction--}}
+{{--                                </span>--}}
+{{--                            </a>--}}
+{{--                            <div class="dropdown-menu">--}}
+{{--                                <div class="dropdown-menu-columns">--}}
+{{--                                    <div class="dropdown-menu-column">--}}
+{{--                                        <a class="dropdown-item" href="{{route('backend.auction.create')}}">--}}
+{{--                                            Create--}}
+{{--                                        </a>--}}
+{{--                                        <a class="dropdown-item" href="{{route('backend.auction.index')}}">--}}
+{{--                                            View--}}
+{{--                                        </a>--}}
+{{--                                        <a class="dropdown-item" href="{{route('backend.auction.trash')}}">--}}
+{{--                                            Trash List--}}
+{{--                                        </a>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </li>--}}
+
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="{{route('backend.auction.index')}}" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false" >
+                            <a class="nav-link dropdown-toggle" href="{{route('backend.brand.index')}}" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false" >
                                 <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/package -->
                                     <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="9 11 12 14 20 6" /><path d="M20 12v6a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h9" /></svg>
                                 </span>
                                 <span class="nav-link-title">
-                                  Auction
+                                  Brand
                                 </span>
                             </a>
                             <div class="dropdown-menu">
                                 <div class="dropdown-menu-columns">
                                     <div class="dropdown-menu-column">
-                                        <a class="dropdown-item" href="{{route('backend.auction.create')}}">
+                                        <a class="dropdown-item" href="{{route('backend.brand.create')}}">
                                             Create
                                         </a>
-                                        <a class="dropdown-item" href="{{route('backend.auction.index')}}">
+                                        <a class="dropdown-item" href="{{route('backend.brand.index')}}">
                                             View
                                         </a>
-                                        <a class="dropdown-item" href="{{route('backend.auction.trash')}}">
+                                        <a class="dropdown-item" href="{{route('backend.brand.trash')}}">
+                                            Trash List
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="{{route('backend.vehicle.index')}}" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false" >
+                                <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/package -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="9 11 12 14 20 6" /><path d="M20 12v6a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h9" /></svg>
+                                </span>
+                                <span class="nav-link-title">
+                                  Vehicle
+                                </span>
+                            </a>
+                            <div class="dropdown-menu">
+                                <div class="dropdown-menu-columns">
+                                    <div class="dropdown-menu-column">
+                                        <a class="dropdown-item" href="{{route('backend.vehicle.create')}}">
+                                            Create
+                                        </a>
+                                        <a class="dropdown-item" href="{{route('backend.vehicle.index')}}">
+                                            View
+                                        </a>
+                                        <a class="dropdown-item" href="{{route('backend.vehicle.trash')}}">
                                             Trash List
                                         </a>
                                     </div>
@@ -210,193 +263,31 @@
                         </li>
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#navbar-base" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false" >
+                            <a class="nav-link dropdown-toggle" href="{{route('backend.vehicle_type.index')}}" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false" >
                                 <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/package -->
-                                  <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="12 3 20 7.5 20 16.5 12 21 4 16.5 4 7.5 12 3" /><line x1="12" y1="12" x2="20" y2="7.5" /><line x1="12" y1="12" x2="12" y2="21" /><line x1="12" y1="12" x2="4" y2="7.5" /><line x1="16" y1="5.25" x2="8" y2="9.75" /></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="9 11 12 14 20 6" /><path d="M20 12v6a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h9" /></svg>
                                 </span>
                                 <span class="nav-link-title">
-                                  Interface
+                                  Vehicle_Type
                                 </span>
                             </a>
                             <div class="dropdown-menu">
                                 <div class="dropdown-menu-columns">
                                     <div class="dropdown-menu-column">
-                                        <a class="dropdown-item" href="./empty.html">
-                                            Empty page
+                                        <a class="dropdown-item" href="{{route('backend.vehicle_type.create')}}">
+                                            Create
                                         </a>
-                                        <a class="dropdown-item" href="./accordion.html">
-                                            Accordion
+                                        <a class="dropdown-item" href="{{route('backend.vehicle_type.index')}}">
+                                            View
                                         </a>
-                                        <a class="dropdown-item" href="./blank.html">
-                                            Blank page
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./form-elements.html" >
-                    <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/checkbox -->
-                      <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="9 11 12 14 20 6" /><path d="M20 12v6a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h9" /></svg>
-                    </span>
-                                <span class="nav-link-title">
-                      Form elements
-                    </span>
-                            </a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#navbar-extra" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false" >
-                    <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/star -->
-                      <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" /></svg>
-                    </span>
-                                <span class="nav-link-title">
-                      Extra
-                    </span>
-                            </a>
-                            <div class="dropdown-menu">
-                                <div class="dropdown-menu-columns">
-                                    <div class="dropdown-menu-column">
-                                        <a class="dropdown-item" href="./activity.html">
-                                            Activity
-                                        </a>
-                                        <a class="dropdown-item" href="./gallery.html">
-                                            Gallery
-                                        </a>
-                                        <a class="dropdown-item" href="./invoice.html">
-                                            Invoice
-                                        </a>
-                                        <a class="dropdown-item" href="./search-results.html">
-                                            Search results
-                                        </a>
-                                        <a class="dropdown-item" href="./pricing.html">
-                                            Pricing cards
-                                        </a>
-                                        <a class="dropdown-item" href="./faq.html">
-                                            FAQ
-                                            <span class="badge badge-sm bg-green text-uppercase ms-2">New</span>
-                                        </a>
-                                        <a class="dropdown-item" href="./users.html">
-                                            Users
-                                        </a>
-                                    </div>
-                                    <div class="dropdown-menu-column">
-                                        <a class="dropdown-item" href="./license.html">
-                                            License
-                                        </a>
-                                        <a class="dropdown-item" href="./music.html">
-                                            Music
-                                        </a>
-                                        <a class="dropdown-item" href="./tasks.html">
-                                            Tasks
-                                            <span class="badge badge-sm bg-green text-uppercase ms-2">New</span>
-                                        </a>
-                                        <a class="dropdown-item" href="./uptime.html">
-                                            Uptime monitor
-                                        </a>
-                                        <a class="dropdown-item" href="./widgets.html">
-                                            Widgets
-                                        </a>
-                                        <a class="dropdown-item" href="./wizard.html">
-                                            Wizard
+                                        <a class="dropdown-item" href="{{route('backend.vehicle_type.trash')}}">
+                                            Trash List
                                         </a>
                                     </div>
                                 </div>
                             </div>
                         </li>
-                        <li class="nav-item active dropdown">
-                            <a class="nav-link dropdown-toggle" href="#navbar-layout" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false" >
-                    <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/layout-2 -->
-                      <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><rect x="4" y="4" width="6" height="5" rx="2" /><rect x="4" y="13" width="6" height="7" rx="2" /><rect x="14" y="4" width="6" height="7" rx="2" /><rect x="14" y="15" width="6" height="5" rx="2" /></svg>
-                    </span>
-                                <span class="nav-link-title">
-                      Layout
-                    </span>
-                            </a>
-                            <div class="dropdown-menu">
-                                <div class="dropdown-menu-columns">
-                                    <div class="dropdown-menu-column">
-                                        <a class="dropdown-item" href="./layout-horizontal.html">
-                                            Horizontal
-                                        </a>
-                                        <a class="dropdown-item" href="./layout-boxed.html">
-                                            Boxed
-                                            <span class="badge badge-sm bg-green text-uppercase ms-2">New</span>
-                                        </a>
-                                        <a class="dropdown-item" href="./layout-vertical.html">
-                                            Vertical
-                                        </a>
-                                        <a class="dropdown-item" href="./layout-vertical-transparent.html">
-                                            Vertical transparent
-                                        </a>
-                                        <a class="dropdown-item" href="./layout-vertical-right.html">
-                                            Right vertical
-                                        </a>
-                                        <a class="dropdown-item" href="./layout-condensed.html">
-                                            Condensed
-                                        </a>
-                                        <a class="dropdown-item" href="./layout-combo.html">
-                                            Combined
-                                        </a>
-                                    </div>
-                                    <div class="dropdown-menu-column">
-                                        <a class="dropdown-item" href="./layout-navbar-dark.html">
-                                            Navbar dark
-                                        </a>
-                                        <a class="dropdown-item" href="./layout-navbar-sticky.html">
-                                            Navbar sticky
-                                        </a>
-                                        <a class="dropdown-item" href="./layout-navbar-overlap.html">
-                                            Navbar overlap
-                                        </a>
-                                        <a class="dropdown-item" href="./layout-rtl.html">
-                                            RTL mode
-                                        </a>
-                                        <a class="dropdown-item active" href="./layout-fluid.html">
-                                            Fluid
-                                        </a>
-                                        <a class="dropdown-item" href="./layout-fluid-vertical.html">
-                                            Fluid vertical
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./icons.html" >
-                    <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/ghost -->
-                      <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 11a7 7 0 0 1 14 0v7a1.78 1.78 0 0 1 -3.1 1.4a1.65 1.65 0 0 0 -2.6 0a1.65 1.65 0 0 1 -2.6 0a1.65 1.65 0 0 0 -2.6 0a1.78 1.78 0 0 1 -3.1 -1.4v-7" /><line x1="10" y1="10" x2="10.01" y2="10" /><line x1="14" y1="10" x2="14.01" y2="10" /><path d="M10 14a3.5 3.5 0 0 0 4 0" /></svg>
-                    </span>
-                                <span class="nav-link-title">
-                      1960 icons
-                    </span>
-                            </a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#navbar-help" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false" >
-                    <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/lifebuoy -->
-                      <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><circle cx="12" cy="12" r="4" /><circle cx="12" cy="12" r="9" /><line x1="15" y1="15" x2="18.35" y2="18.35" /><line x1="9" y1="15" x2="5.65" y2="18.35" /><line x1="5.65" y1="5.65" x2="9" y2="9" /><line x1="18.35" y1="5.65" x2="15" y2="9" /></svg>
-                    </span>
-                                <span class="nav-link-title">
-                      Help
-                    </span>
-                            </a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="./docs/index.html">
-                                    Documentation
-                                </a>
-                                <a class="dropdown-item" href="./changelog.html">
-                                    Changelog
-                                </a>
-                                <a class="dropdown-item" href="https://github.com/tabler/tabler" target="_blank" rel="noopener">
-                                    Sources code
-                                </a>
-                                <a class="dropdown-item text-pink" href="https://github.com/sponsors/codecalm" target="_blank" rel="noopener">
-                                    <!-- Download SVG icon from http://tabler-icons.io/i/heart -->
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-inline me-1" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M19.5 13.572l-7.5 7.428l-7.5 -7.428m0 0a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572" /></svg>
-                                    Sponsor project!
-                                </a>
-                            </div>
-                        </li>
+
                     </ul>
                     <div class="my-2 my-md-0 flex-grow-1 flex-md-grow-0 order-first order-md-last">
                         <form action="." method="get">
@@ -521,6 +412,7 @@
 </div>
 <!-- Libs JS -->
 <script src="{{asset('dist/libs/apexcharts/dist/apexcharts.min.js')}}" defer></script>
+@yield('js')
 <script src="{{asset('dist/libs/jsvectormap/dist/js/jsvectormap.min.js')}}" defer></script>
 <script src="{{asset('dist/libs/jsvectormap/dist/maps/world.js')}}" defer></script>
 <script src="{{asset('dist/libs/jsvectormap/dist/maps/world-merc.js')}}" defer></script>
@@ -952,6 +844,7 @@
     });
     // @formatter:on
 </script>
+
 <script>
     // @formatter:off
     document.addEventListener("DOMContentLoaded", function () {
@@ -1103,6 +996,6 @@
     // @formatter:on
 </script>
 
-@yield('js')
+
 </body>
 </html>

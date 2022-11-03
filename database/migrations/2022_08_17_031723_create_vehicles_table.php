@@ -15,13 +15,14 @@ return new class extends Migration
     {
         Schema::create('vehicles', function (Blueprint $table) {
             $table->id();
-            $table->BigInteger('vehicle_type_id')->unsigned(); 
-            $table->BigInteger('brand_id')->unsigned();        
+            $table->BigInteger('vehicle_type_id')->unsigned();
+            $table->BigInteger('brand_id')->unsigned();
             $table->string('title', 100);
             $table->string('slug')->unique();
             $table->string('specification')->nullable();
             $table->integer('stock');
             $table->integer('quantity');
+            $table->integer('price');
             $table->string('meta_title',100)->nullable();
             $table->string('meta_keyword',100)->nullable();
             $table->string('meta_description',100)->nullable();

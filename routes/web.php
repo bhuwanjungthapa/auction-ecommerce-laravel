@@ -37,3 +37,53 @@ Route::prefix('backend/auction')->name('backend.auction.')->middleware('auth')->
     Route:: get('/{id}/edit',[\App\Http\Controllers\backend\AuctionsController::class,'edit'])->name('edit');
     Route:: put('/{id}',[\App\Http\Controllers\backend\AuctionsController::class,'update'])->name('update');
 });
+
+
+
+//Brand
+Route::prefix('backend/brand')->name('backend.brand.')->group(function(){
+    Route:: get('/trash',[\App\Http\Controllers\backend\BrandController::class,'trash'])->name('trash');
+    Route:: post('/restore/{id} ',[\App\Http\Controllers\backend\BrandController::class,'restore'])->name('restore');
+    Route:: delete ('/force_delete/{id}',[\App\Http\Controllers\backend\BrandController::class,'permanentDelete'])->name('force_delete');
+    Route::get('/create',[\App\Http\Controllers\backend\BrandController::class,'create'])->name('create');
+    Route:: post('',[\App\Http\Controllers\backend\BrandController::class,'store'])->name('store');
+    Route::get('',[\App\Http\Controllers\backend\BrandController::class,'index'])->name('index');
+    Route:: get('/{id}',[\App\Http\Controllers\backend\BrandController::class,'show'])->name('show');
+    Route:: delete('/{id}',[\App\Http\Controllers\backend\BrandController::class,'destroy'])->name('destroy');
+    Route:: get('/{id}/edit',[\App\Http\Controllers\backend\BrandController::class,'edit'])->name('edit');
+    Route:: put('ag/{id}',[\App\Http\Controllers\backend\BrandController::class,'update'])->name('update');
+});
+
+
+
+
+//vehicle_type
+Route::prefix('backend/vehicle_type')->name('backend.vehicle_type.')->group(function(){
+    Route:: get('/trash',[\App\Http\Controllers\backend\VehicleTypeController::class,'trash'])->name('trash');
+    Route:: post('/restore/{id} ',[\App\Http\Controllers\backend\VehicleTypeController::class,'restore'])->name('restore');
+    Route:: delete ('/force_delete/{id}',[\App\Http\Controllers\backend\VehicleTypeController::class,'permanentDelete'])->name('force_delete');
+    Route::get('/create',[\App\Http\Controllers\backend\VehicleTypeController::class,'create'])->name('create');
+    Route:: post('',[\App\Http\Controllers\backend\VehicleTypeController::class,'store'])->name('store');
+    Route::get('',[\App\Http\Controllers\backend\VehicleTypeController::class,'index'])->name('index');
+    Route:: get('/{id}',[\App\Http\Controllers\backend\VehicleTypeController::class,'show'])->name('show');
+    Route:: delete('/{id}',[\App\Http\Controllers\backend\VehicleTypeController::class,'destroy'])->name('destroy');
+    Route:: get('/{id}/edit',[\App\Http\Controllers\backend\VehicleTypeController::class,'edit'])->name('edit');
+    Route:: put('ag/{id}',[\App\Http\Controllers\backend\VehicleTypeController::class,'update'])->name('update');
+});
+
+
+//vehicle
+Route::prefix('backend/vehicle')->name('backend.vehicle.')->group(function(){
+    Route:: get('/trash',[\App\Http\Controllers\backend\VehicleController::class,'trash'])->name('trash');
+    Route:: post('/restore/{id} ',[\App\Http\Controllers\backend\VehicleController::class,'restore'])->name('restore');
+    Route:: delete ('/force_delete/{id}',[\App\Http\Controllers\backend\VehicleController::class,'permanentDelete'])->name('force_delete');
+    Route::get('/create',[\App\Http\Controllers\backend\VehicleController::class,'create'])->name('create');
+    Route:: post('',[\App\Http\Controllers\backend\VehicleController::class,'store'])->name('store');
+    Route::get('',[\App\Http\Controllers\backend\VehicleController::class,'index'])->name('index');
+    Route:: get('/{id}',[\App\Http\Controllers\backend\VehicleController::class,'show'])->name('show');
+    Route:: delete('/{id}',[\App\Http\Controllers\backend\VehicleController::class,'destroy'])->name('destroy');
+    Route:: get('/{id}/edit',[\App\Http\Controllers\backend\VehicleController::class,'edit'])->name('edit');
+    Route:: put('ag/{id}',[\App\Http\Controllers\backend\VehicleController::class,'update'])->name('update');
+});
+
+

@@ -5,10 +5,10 @@
         <div class="col-xl-12 col-md-12">
             <div class="card table-card">
                 <div class="card-header">
-                    <h5>{{$module}}
+                    <h1>{{$module}}
                         <a href="{{route($base_route.'create')}}" class="btn btn-info">Create</a>
-                        <a href="{{route($base_route.'trash')}}" class="btn btn-info">Trash</a>
-                    </h5>
+                        <a href="{{route($base_route.'index')}}" class="btn btn-info">List</a>
+                    </h1>
                 </div>
                 @if(session('success'))
                     <p style="background: green; padding:10px">{{session('success')}}</p>
@@ -24,10 +24,6 @@
                                 <div class="table-responsive">
                                     <table class="table">
                                         <thead>
-                                        <th>#</th>
-                                        <th>ID</th>
-                                        <th>title</th>
-                                        <th>status</th>
                                         <tr>
                                             <th>#</th>
                                             <th>ID</th>
@@ -48,11 +44,12 @@
                                                 <td>{{$record->start_date}}</td>
 
                                                 <td>
-                                                    <a href="{{route($base_route.'show',$record->id)}}" class="btn btn-primary">ViewDetails</a>
-                                                    <a href="{{route($base_route.'edit',$record->id)}}"class="btn btn-warning">Edit</a>
-                                                    <form action="{{route($base_route.'destroy',$record->id)}}" method="post" style="display:inline-block">
-                                                        @method("delete")
+                                                    <form action="{{route($base_route.'restore',$record->id)}}" method="post" style="display:inline-block">
                                                         @csrf
+                                                        <input type="submit" class="btn btn-primary" value="Restore">
+                                                    </form>
+                                                    <form action="{{route($base_route.'force_delete',$record->id)}}" method="post" style="display:inline-block">
+                                                        @method("delete") @csrf
                                                         <input type="submit" class="btn btn-danger" value="Delete">
                                                     </form>
                                                 </td>
