@@ -3,7 +3,11 @@
 <div class="col-xl-12 col-md-12">
     <div class="card table-card">
         <div class="card-header">
-            <h5>{{$module}}</h5>
+            <h1>{{$module}}
+                <a href="{{route($base_route.'index')}}" class="btn btn-info">List</a>
+                <a href="{{route($base_route.'edit',$data['record']->id)}}" class="btn btn-info">Edit</a>
+                <a href="{{route($base_route.'destroy',$data['record']->id)}}" class="btn btn-info">Delete</a>
+            </h1>
         </div>
         <div class="col-xl-12 col-md-12">
             <div class="row">
@@ -30,6 +34,10 @@
                                 <tr>
                                     <th>Meta Title</th>
                                     <td>{{$data['record']->meta_title}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Price</th>
+                                    <td>{{$data['record']->price}}</td>
                                 </tr>
                                 <tr>
                                     <th>Meta Keyword</th>
@@ -61,7 +69,7 @@
                                 </tr>
                             </table>
                         </div>
-                        
+
                     </div>
                 </div>
 

@@ -3,12 +3,12 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
-use App\Models\Backend\Vehicle;
-use Illuminate\Http\Request;
 use App\Models\Backend\Brand;
-use App\Http\Controllers\Backend\BackendBaseController;
+use App\Models\Backend\Vehicle;
+use App\Models\Backend\VehicleType;
+use Illuminate\Http\Request;
 
-class BrandController extends BackendBaseController
+class VehicleController extends BackendBaseController
 {
     protected $base_route = 'backend.vehicle.';
     protected $base_view = 'backend.vehicle.';
@@ -24,7 +24,9 @@ class BrandController extends BackendBaseController
     }
     public function create()
     {
-        return view($this->__loadDataToView($this->base_view .'create'));
+        $data['vehicletypes']= VehicleType::pluck('title','id');
+        $data['brands']= Brand::pluck('title','id');
+        return view($this->__loadDataToView($this->base_view .'create'),compact('data'));
     }
     public function store(Request $request)
     {
@@ -49,6 +51,7 @@ class BrandController extends BackendBaseController
     }
     public function show($id)
     {
+        //$data['record'] = $this->model::all();
         $data['record'] = $this->model::find($id);
         if(!$data['record' ]){
             request()->session()->flash('error',"Error:Invalid Request");
@@ -58,6 +61,9 @@ class BrandController extends BackendBaseController
     }
     public function edit($id)
     {
+
+        $data['vehicletypes']= VehicleType::pluck('title','id');
+        $data['brands']= Brand::pluck('title','id');
         $data['record'] = $this->model::find($id);
         if(!$data['record' ]){
             request()->session()->flash('error',"Error:Invalid Request");

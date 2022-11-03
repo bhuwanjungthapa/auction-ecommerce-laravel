@@ -13,13 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('frontend.home');
+// });
+Route::get('/',[\App\Http\Controllers\Frontend\HomeController::class,'index'])->name('frontend.home');
+
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/admin', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
 
@@ -74,7 +76,7 @@ Route::prefix('backend/vehicle_type')->name('backend.vehicle_type.')->group(func
 
 //vehicle
 Route::prefix('backend/vehicle')->name('backend.vehicle.')->group(function(){
-    Route:: get('/trash',[\App\Http\Controllers\backend\VehicleController::class,'trash'])->name('trash');
+    Route:: get('/trash',[\App\Http\Controllers\backend\Vehicle::class,'trash'])->name('trash');
     Route:: post('/restore/{id} ',[\App\Http\Controllers\backend\VehicleController::class,'restore'])->name('restore');
     Route:: delete ('/force_delete/{id}',[\App\Http\Controllers\backend\VehicleController::class,'permanentDelete'])->name('force_delete');
     Route::get('/create',[\App\Http\Controllers\backend\VehicleController::class,'create'])->name('create');

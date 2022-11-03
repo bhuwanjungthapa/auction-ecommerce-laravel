@@ -2,11 +2,7 @@
 
     <div class="form-group">
         {!!Form::label('vehicle_type_id ','Vehicle Type')!!}
-        {!!Form::select ('vehicle_type_id',$data['vehicle'],null,['class'=> 'form-control'])!!}
-{{--        <div class="form-group">--}}
-{{--            {!!Form::label('vehicle_type_id','Vehicle Type')!!}--}}
-{{--            {!!Form::select ('vehicle_type_id',$data['categories'],null,['class'=> 'form-control', 'placeholder' => 'Select category','id' => 'category_id'])!!} --}}{{-- //single field error --}}
-{{--        </div>--}}
+        {!!Form::select ('vehicle_type_id',$data['vehicletypes'],null,['class'=> 'form-control'])!!}
         @error('vehicle_type_id')
         <span class="text-danger">{{$message}}</span>
         @enderror
@@ -34,20 +30,39 @@
         <span class="text-danger">{{$message}}</span>
         @enderror
     </div>
+
     <div class="form-group">
-        {!!Form::label('rank','Rank')!!}
-        {!!Form::number ('rank',null,['class'=> 'form-control','placeholder'=>'Rank'])!!}
-        @error('rank')
+        {!!Form::label('specification','Specification')!!}
+        {!!Form::text ('specification',null,['class'=> 'form-control','placeholder'=>'specification Keyword'])!!}
+        @error('specification')
         <span class="text-danger">{{$message}}</span>
         @enderror
     </div>
+
     <div class="form-group">
-        {!!Form::label('image','Image')!!}
-        {!!Form::file ('image',null,['class'=> 'form-control','placeholder'=>'Image'])!!}
-        @error('Image')
+        {!!Form::label('stock','stock')!!}
+        {!!Form::number ('stock',null,['class'=> 'form-control','placeholder'=>'stock'])!!}
+        @error('stock')
         <span class="text-danger">{{$message}}</span>
         @enderror
     </div>
+
+    <div class="form-group">
+        {!!Form::label('quantity','quantity')!!}
+        {!!Form::number ('quantity',null,['class'=> 'form-control','placeholder'=>'quantity'])!!}
+        @error('quantity')
+        <span class="text-danger">{{$message}}</span>
+        @enderror
+    </div>
+
+    <div class="form-group">
+        {!!Form::label('price','price')!!}
+        {!!Form::number ('price',null,['class'=> 'form-control','placeholder'=>'price'])!!}
+        @error('price')
+        <span class="text-danger">{{$message}}</span>
+        @enderror
+    </div>
+
     <div class="form-group">
         {!!Form::label('meta_title','Meta Title')!!}
         {!!Form::text ('meta_title',null,['class'=> 'form-control','placeholder'=>'Meta Title'])!!}
@@ -66,6 +81,14 @@
         {!!Form::label('meta_description','Meta Description')!!}
         {!!Form::text ('meta_description',null,['class'=> 'form-control','placeholder'=>'Meta Description'])!!}
         @error('meta_description')
+        <span class="text-danger">{{$message}}</span>
+        @enderror
+    </div>
+
+    <div class="form-group">
+        {!!Form::label('description','Description')!!}
+        {!!Form::text ('description',null,['class'=> 'form-control','placeholder'=>'Description'])!!}
+        @error('description')
         <span class="text-danger">{{$message}}</span>
         @enderror
     </div>
