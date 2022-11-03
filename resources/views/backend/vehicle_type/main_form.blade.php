@@ -1,14 +1,14 @@
 <div class="col-md-12">
     <div class="form-group">
         {!!Form::label('title','Vehicle Title')!!}
-        {!!Form::text ('title',null,['class'=> 'form-control','placeholder'=>'Vehicle Title'])!!}
+        {!!Form::text ('title',null,['class'=> 'form-control','placeholder'=>'Vehicle Title','id'=>'title'])!!}
         @error('title')
         <span class="text-danger">{{$message}}</span>
         @enderror
     </div>
     <div class="form-group">
         {!!Form::label('slug','Slug')!!}
-        {!!Form::text ('slug',null,['class'=> 'form-control','placeholder'=>'Slug'])!!}
+        {!!Form::text ('slug',null,['class'=> 'form-control','placeholder'=>'Slug','id'=>'slug'])!!}
         @error('slug')
         <span class="text-danger">{{$message}}</span>
         @enderror
@@ -48,7 +48,7 @@
         <span class="text-danger">{{$message}}</span>
         @enderror
     </div>
-   
+
     <div class="form-group">
         {!!Form::label('status','Status')!!} <br>
         {!!Form::radio('status','1',null)!!}Active

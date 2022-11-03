@@ -2,15 +2,15 @@
 
     <div class="form-group">
         {!!Form::label('title','Title')!!}
-        {!!Form::text ('title',null,['class'=> 'form-control','placeholder'=>'Title'])!!}
-        @error('semester')
+        {!!Form::text ('title',null,['class'=> 'form-control','placeholder'=>'Title','id'=>'title'])!!}
+        @error('title')
         <span class="text-danger">{{$message}}</span>
         @enderror
     </div>
 
     <div class="form-group">
         {!!Form::label('slug','Slug')!!}
-        {!!Form::text ('slug',null,['class'=> 'form-control','placeholder'=>'slug'])!!}
+        {!!Form::text ('slug',null,['class'=> 'form-control','placeholder'=>'slug','id'=>'slug'])!!}
         @error('slug')
         <span class="text-danger">{{$message}}</span>
         @enderror

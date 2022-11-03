@@ -412,6 +412,9 @@
 </div>
 <!-- Libs JS -->
 <script src="{{asset('dist/libs/apexcharts/dist/apexcharts.min.js')}}" defer></script>
+<script src="{{asset('assets/plugins/jquery/jquery.min.js')}}" defer></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 @yield('js')
 <script src="{{asset('dist/libs/jsvectormap/dist/js/jsvectormap.min.js')}}" defer></script>
 <script src="{{asset('dist/libs/jsvectormap/dist/maps/world.js')}}" defer></script>
