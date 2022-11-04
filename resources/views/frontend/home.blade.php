@@ -1,4 +1,4 @@
-@section('title','MyCommerce')
+@section('title','VehicleEcommerce')
 @extends('layouts.frontend')   
 
 	<!-- hero area -->

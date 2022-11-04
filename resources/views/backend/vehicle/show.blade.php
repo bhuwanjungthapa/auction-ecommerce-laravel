@@ -23,10 +23,7 @@
                                     <th>Slug</th>
                                     <td>{{$data['record']->slug}}</td>
                                 </tr>
-                                <tr>
-                                    <th>Rank</th>
-                                    <td>{{$data['record']->rank}}</td>
-                                </tr>
+
                                 <tr>
                                     <th>Image</th>
                                     <td>{{$data['record']->image}}</td>

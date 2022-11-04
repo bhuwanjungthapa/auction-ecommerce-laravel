@@ -5,8 +5,10 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Models\Backend\Brand;
 use App\Models\Backend\Vehicle;
+use App\Models\Backend\VehicleImage;
 use App\Models\Backend\VehicleType;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class VehicleController extends BackendBaseController
 {
@@ -30,23 +32,41 @@ class VehicleController extends BackendBaseController
     }
     public function store(Request $request)
     {
-        // try{
-        //     $request->validate(array(
-        //         'year'=>'required'
-        //     ));
-        $request->request->add(['created_by'=>auth()->user()->id]);
-        $record=$this->model::create($request->all());
-        if($record)
-        {
-            request()->session()->flash('success',($this->__loadDataToView($this->module))."Created");
-        }else{
-            request()->session()->flash('error',($this->__loadDataToView($this->module))."Creation Failed ");
-        }
-        //}
-        // catch(\Exception $exception){
-        //     request()->session()->flash('error',"Error:".$exception->getMessage());
+        // dd($request);
+        try{
+            //DB::beginTransaction();
+            $request->request->add(['stock'=>$request->quantity ]);
+            $request->request->add(['created_by'=>auth()->user()->id]);
+            $record=$this->model::create($request->all());
+            if($record)
+            {
 
-        // }
+                //for product images table
+                $vehicle_image_data['vehicle_id']=$record->id;
+                $image_files=$request->file('image_file');
+                $image_titles  =$request->input('image_title');
+                for($i=0;$i<count($image_files);$i++)
+
+                {
+                    $vehicle_image_data['title']=$image_titles[$i];
+                    $vehImage = $image_files[$i ];
+                    $image_name = uniqid() . '_' . $vehImage ->getClientOriginalName();
+                    $vehImage->move('images/vehicles/',$image_name);
+                    $vehicle_image_data ['name']= $image_name;
+                    VehicleImage::create($vehicle_image_data );
+                }
+                request()->session()->flash('success',($this->__loadDataToView($this->module))."Created");
+            }else{
+                request()->session()->flash('error',($this->__loadDataToView($this->module))."Creation Failed ");
+
+            }
+            DB::commit();
+        }
+        catch(\Exception $exception){
+            request()->session()->flash('error',"Error:".$exception->getMessage());
+            DB::rollBack();
+        }
+
         return redirect()->route($this->__loadDataToView($this->base_route.'index'));
     }
     public function show($id)

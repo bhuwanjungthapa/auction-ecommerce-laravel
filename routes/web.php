@@ -17,6 +17,10 @@ use Illuminate\Support\Facades\Route;
 //     return view('frontend.home');
 // });
 Route::get('/',[\App\Http\Controllers\Frontend\HomeController::class,'index'])->name('frontend.home');
+Route::get('/vehicle',[\App\Http\Controllers\Frontend\HomeController::class,'vehicle'])->name('frontend.vehicle');
+Route::get('/contact',[\App\Http\Controllers\Frontend\HomeController::class,'contact'])->name('frontend.contact');
+Route::get('/vehicle/{slug}',[\App\Http\Controllers\Frontend\HomeController::class,'vehicleDetail'])->name('frontend.vehicleDetail');
+Route::post('/cart/add',[\App\Http\Controllers\Frontend\HomeController::class,'addToCart'])->name('frontend.cart.add');
 
 
 Auth::routes();
