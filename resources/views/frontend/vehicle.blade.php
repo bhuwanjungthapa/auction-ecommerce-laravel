@@ -1,4 +1,4 @@
-@extends('layouts.frontend') 
+@extends('layouts.frontend')
 @section('title','All Vehicle')
 
 <!-- products -->
@@ -10,13 +10,13 @@
                 <div class="product-filters">
                     <ul>
                         @foreach ($data['vehicles_type'] as $vehicle)
-            
+
                         <li class="active">{{$vehicle->title}}</li>
                         @endforeach
-                        
+
                     </ul>
-                    
-                    
+
+
                 </div>
             </div>
         </div>
@@ -24,18 +24,21 @@
         <div class="row product-lists">
             @foreach($data['vehicles'] as $vehicle)
             <div class="col-lg-4 col-md-6 text-center strawberry">
-                
+                @php
+                    $image = $vehicle->vehicleImages()->first();
+                @endphp
                 <div class="single-product-item">
-                    
+
                     <div class="product-image">
-                        <a href="{{route('frontend.vehicleDetail',$vehicle->slug)}}"><img src="{{$vehicle->image}}" alt=""></a>
+                        <a href="{{route('frontend.vehicleDetail',$vehicle->slug)}}"><img src="{{asset('images/vehicles/'. $image->name)}}" alt=""></a>
+                        {{--                        <a href="{{route('frontend.vehicleDetail',$vehicle->slug)}}"><img src="{{$vehicle->image}}" alt=""></a>--}}
                     </div>
                     <h3>{{$vehicle->title}}</h3>
                     <p class="product-price"> {{$vehicle->price}} </p>
                     <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-                   
+
                 </div>
-               
+
             </div>
             @endforeach
             {{-- <div class="col-lg-4 col-md-6 text-center berry">

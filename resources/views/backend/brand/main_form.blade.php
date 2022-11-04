@@ -1,6 +1,6 @@
 <div class="col-md-12">
 
-    <div class="form-group">
+    <div class="mb-3">
         {!!Form::label('title','Title')!!}
         {!!Form::text ('title',null,['class'=> 'form-control','placeholder'=>'Title','id'=>'title'])!!}
         @error('title')
@@ -21,14 +21,6 @@
         {!!Form::label('rank','rank')!!}
         {!!Form::text ('rank',null,['class'=> 'form-control','placeholder'=>'rank'])!!}
         @error('rank')
-        <span class="text-danger">{{$message}}</span>
-        @enderror
-    </div>
-
-    <div class="form-group">
-        <label for="image">image</label>
-        <input type="file" name="image" class="form-control" id="image" >
-        @error('image')
         <span class="text-danger">{{$message}}</span>
         @enderror
     </div>

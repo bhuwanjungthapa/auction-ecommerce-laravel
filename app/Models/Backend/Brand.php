@@ -12,8 +12,8 @@ class Brand extends Model
     use HasFactory;
     use softDeletes;
     protected $table='brands';
-    protected $fillable = ['title','slug','rank','image','meta_title','meta_keyword','meta_description','status','created_by','updated_by'];
-    protected $filltable = ['title','slug','rank','image','meta_title','meta_keyword','meta_description','status','created_by','updated_by'];
+    protected $fillable = ['title','slug','rank','meta_title','meta_keyword','meta_description','status','created_by','updated_by'];
+    protected $filltable = ['title','slug','rank','meta_title','meta_keyword','meta_description','status','created_by','updated_by'];
      function createdBy()
      {
          return $this->belongsTo(User::class,'created_by','id');

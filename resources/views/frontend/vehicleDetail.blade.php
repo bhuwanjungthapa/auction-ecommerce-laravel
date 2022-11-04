@@ -1,4 +1,4 @@
-@extends('layouts.frontend') 
+@extends('layouts.frontend')
 @section('title','Vehicle-detail')
 
 <!-- breadcrumb-section -->
@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-lg-8 offset-lg-2 text-center">
                 <div class="breadcrumb-text">
-                    
+
                     <h1>Vehicle Detail</h1>
                 </div>
             </div>
@@ -19,16 +19,27 @@
 <!-- single product -->
 
 
-<div class="single-product mt-150 mb-150">    
+<div class="single-product mt-150 mb-150">
     <div class="container">
         <div class="row">
-           
+
+
 
             <div class="col-md-5">
+
+                @php
+                    $images = $data['vehicles']->vehicleImages()->get();
+                @endphp
                 <div class="single-product-img">
-                    <img src="#" alt="car">
+                    @foreach($images as $image)
+                        <div data-slider-id="1">
+                            <img src="{{asset('images/vehicles/'. $image->name)}}" alt="car">
+                        </div>
+                    @endforeach
                 </div>
+
             </div>
+
             <form action="{{route('frontend.cart.add')}}" method="post">
                 @csrf
                 <input type="hidden" name="vehicle_id" value="{{$data['vehicles']->id}}">
@@ -40,26 +51,29 @@
 
             <div class="col-md-7">
                 <div class="single-product-content">
-                     <h3>{{$data['vehicles']->title}}</h3> 
-                     <p class="single-product-pricing">Rs.{{$data['vehicles']->price}}</p> 
-                     <p>{{$data['vehicles']->description}}</p> 
+                     <h3>{{$data['vehicles']->title}}</h3>
+                     <p class="single-product-pricing">Rs.{{$data['vehicles']->price}}</p>
+                     <p>{{$data['vehicles']->description}}</p>
                      <h6>In Stock:{{$data['vehicles']->stock}}</h6>
 
-                     <form action="index.html">
-                        <input type="number" maxlength={{$data['vehicles']->stock}} placeholder="0">
-                    </form>
+                    <select name="qty" id="qty">
+                        <option value="">Select Quantity</option>
+                        @for($i=1;$i<=$data['vehicles']->stock;$i++)
+                            <option value="{{$i}}">{{$i}}</option>
+                        @endfor
+                    </select>
                     <div class="single-product-form">
-                        
+
                         <button type="submit" class="cart-btn"><i class="fas fa-shopping-cart"></i></button>
-                    
+
                     </div>
-                    
+
                 </div>
             </div>
         </form>
         </div>
     </div>
-    
+
 </div>
 
 <!-- end single product -->

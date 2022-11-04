@@ -21,6 +21,8 @@ Route::get('/vehicle',[\App\Http\Controllers\Frontend\HomeController::class,'veh
 Route::get('/contact',[\App\Http\Controllers\Frontend\HomeController::class,'contact'])->name('frontend.contact');
 Route::get('/vehicle/{slug}',[\App\Http\Controllers\Frontend\HomeController::class,'vehicleDetail'])->name('frontend.vehicleDetail');
 Route::post('/cart/add',[\App\Http\Controllers\Frontend\HomeController::class,'addToCart'])->name('frontend.cart.add');
+Route::get('/cart',[\App\Http\Controllers\Frontend\HomeController::class,'cart'])->name('frontend.cart');
+Route::get('/checkout',[\App\Http\Controllers\Frontend\HomeController::class,'checkout'])->name('frontend.checkout');
 
 
 Auth::routes();

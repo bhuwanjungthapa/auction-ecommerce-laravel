@@ -21,13 +21,6 @@
         @enderror
     </div>
     <div class="form-group">
-        {!!Form::label('image','Image')!!}
-        {!!Form::file ('image',null,['class'=> 'form-control','placeholder'=>'Image'])!!}
-        @error('Image')
-        <span class="text-danger">{{$message}}</span>
-        @enderror
-    </div>
-    <div class="form-group">
         {!!Form::label('meta_title','Meta Title')!!}
         {!!Form::text ('meta_title',null,['class'=> 'form-control','placeholder'=>'Meta Title'])!!}
         @error('meta_title')

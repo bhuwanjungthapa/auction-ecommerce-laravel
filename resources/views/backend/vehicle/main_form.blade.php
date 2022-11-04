@@ -41,7 +41,7 @@
 
     <div class="form-group">
         {!!Form::label('stock','stock')!!}
-        {!!Form::number ('stock',null,['class'=> 'form-control','placeholder'=>'stock'])!!}
+        {!!Form::number('stock',null,['class'=> 'form-control','placeholder'=>'stock'])!!}
         @error('stock')
         <span class="text-danger">{{$message}}</span>
         @enderror
