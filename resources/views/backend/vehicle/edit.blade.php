@@ -16,11 +16,11 @@ input::-webkit-inner-spin-button {
      <div class="col-xl-12 col-md-12">
          <div class="card table-card">
              <div class="card-header">
-                 <h1>{{$module}}
-                     <a href="{{route($base_route.'create')}}" class="btn btn-info">Create</a>
-                     <a href="{{route($base_route.'index')}}" class="btn btn-info">List</a>
-                     <a href="{{route($base_route.'trash')}}" class="btn btn-info">Trash</a>
-                 </h1>
+                 <h1>{{$module}}</h1>
+                 <div class="form-selectgroup form-selectgroup-pills" style="font-size: 15px">
+                     <a href="{{route($base_route.'index')}}" style="font-size: 18px;margin-top: -10px;margin-left: 8px;text-decoration: none" class="form-selectgroup-label">List</a>
+                     <a href="{{route($base_route.'trash')}}" style="font-size: 18px;margin-top: -10px;margin-left: 8px;text-decoration: none" class="form-selectgroup-label">Trash</a>
+                 </div>
              </div>
              <div class="col-xl-12 col-md-12">
                  <div class="row">

@@ -30,24 +30,23 @@
                 @php
                     $images = $data['vehicles']->vehicleImages()->get();
                 @endphp
-                <div class="single-product-img">
+                <div class="single-product-img" style="float: right">
                     @foreach($images as $image)
                         <div data-slider-id="1">
                             <img src="{{asset('images/vehicles/'. $image->name)}}" alt="car">
                         </div>
                     @endforeach
                 </div>
-
             </div>
 
             <form action="{{route('frontend.cart.add')}}" method="post">
                 @csrf
                 <input type="hidden" name="vehicle_id" value="{{$data['vehicles']->id}}">
-                <input type="hidden" name="vehicle_slug" value="{{$data['vehicles']->slug}}">
-
-                <input type="hidden" name="vehicle_name" value="{{$data['vehicles']->title}}">
-                <input type="hidden" name="vehicle_price" value="{{$data['vehicles']->price}}">
-                <input type="hidden" name="vehicle_quantity" value="{{$data['vehicles']->quantity}}">
+                <input type="hidden" name="title" value="{{$data['vehicles']->title}}">
+                <input type="hidden" name="price" value="{{$data['vehicles']->price}}">
+                <input type="hidden" name="slug" value="{{$data['vehicles']->slug}}">
+                <input type="hidden" name="quantity" value="{{$data['vehicles']->quantity}}">
+                <input type="hidden" name="weight " value="1">
 
             <div class="col-md-7">
                 <div class="single-product-content">

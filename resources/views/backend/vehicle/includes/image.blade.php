@@ -2,19 +2,23 @@
     <tr>
         <th>Image</th>
         <th>Title</th>
-        <th>Action</th>
+{{--        <th>Action</th>--}}
     </tr>
     <tr>
         <td>
-            {!!  Form::file('image_file[]', null,['class' => 'form-control'])!!}
+            {!!  Form::file('image_file[]', null,['class' => 'form-label col-3 col-form-label'])!!}
         </td>
-        <td><input type="text" name="image_title[]" class="form-control" placeholder="Enter Image Title"/></td>
-        <td>
-            <a class="btn btn-block btn-warning sa-warning remove_row "><i class="fa fa-trash"></i></a>
-        </td>
+        <td>{!!Form::text ('image_file[]',null,['class'=> 'form-control','placeholder'=>'Enter Image Title'])!!}</td>
+        @error('image_file')
+        <span class="text-danger">{{$message}}</span>
+        @enderror
+{{--        <td><input type="text" name="image_title[]" class="form-control" placeholder="Enter Image Title"/></td>--}}
+{{--        <td>--}}
+{{--            <a class="btn btn-block btn-warning sa-warning remove_row ">Remove<i class="fa fa-trash"></i></a>--}}
+{{--        </td>--}}
     </tr>
 </table>
-<button class="btn btn-info" type="button" id="addMoreImage" style="margin-bottom: 20px">
-    <i class="fa fa-plus"></i>
-    Add
-</button>
+{{--<button class="btn btn-info" type="button" id="addMoreImage" style="margin-bottom: 20px">--}}
+{{--    <i class="fa fa-plus"></i>--}}
+{{--    Add--}}
+{{--</button>--}}

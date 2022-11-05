@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\models\Backend\Brand;
 use App\models\Backend\Vehicle;
 use App\models\Backend\VehicleType;
+
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -41,10 +43,12 @@ class HomeController extends Controller
         Cart::add
         ([
             'id' => $request->input('vehicle_id'),
-            'name' => $request->input('name'),
+            'name' => $request->input('title'),
             'qty' => $request->input('quantity'),
             'price' => $request->input('price'),
-             ]);
+            'weight' => $request->input('weight'),
+        ]);
              request()->session()->flash('success',"Item added to cart");
+              return redirect()->route('frontend.vehicle',$request->slug);
           }
 }

@@ -28,9 +28,11 @@ class BrandController extends BackendBaseController
     public function store(Request $request)
     {
         // try{
-        //     $request->validate(array(
-        //         'year'=>'required'
-        //     ));
+             $request->validate(array(
+                 'title'=>'required',
+                 'slug'=>'required',
+                 'rank'=>'required'
+             ));
             $request->request->add(['created_by'=>auth()->user()->id]);
             $record=$this->model::create($request->all());
             if($record)

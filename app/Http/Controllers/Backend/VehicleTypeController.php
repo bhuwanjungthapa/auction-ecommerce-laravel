@@ -11,7 +11,7 @@ class VehicleTypeController extends BackendBaseController
 {
     protected $base_route = 'backend.vehicle_type.';
     protected $base_view = 'backend.vehicle_type.';
-    protected $module = 'vehicle_type';
+    protected $module = 'Vehicle Type';
     public function __construct()
     {
         $this->model= new VehicleType();

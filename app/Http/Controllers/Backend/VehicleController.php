@@ -81,7 +81,7 @@ class VehicleController extends BackendBaseController
     }
     public function edit($id)
     {
-
+        $data['vehicleimage']= VehicleImage::pluck('title','id','name','vehicle_id');
         $data['vehicletypes']= VehicleType::pluck('title','id');
         $data['brands']= Brand::pluck('title','id');
         $data['record'] = $this->model::find($id);
